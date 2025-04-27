@@ -1,3 +1,5 @@
+const dns = require("dns");
+
 const UrlModel = require("../models/UrlModel");
 
 // shorten url handler to shorten a url and save to database
@@ -52,6 +54,7 @@ module.exports.shortenUrl = (req, res) => {
       }
     });
   } catch (error) {
+    console.log(error);
     res.json({ error: "invalid url" });
   }
 };
